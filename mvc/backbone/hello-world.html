@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>第一个测试例子hello world</title>
+</head>
+<body>
+<button id="check">报到</button>
+<ul id="world-list">
+
+</ul>
+<script src="asset/jquery-1.7.2.min.js"></script>
+<script src="asset/underscore-min.js"></script>
+<script src="asset/backbone.js"></script>
+<script>
+jQuery(function($){
+	window.World=Backbone.Model.extend({
+		name:null
+	});
+	window.Worldlist=Backbone.Collection.extend({
+		//World对象的集合
+		initialize:function(models,options){
+			this.bind("add",options.view.addOneWorld);
+		}
+	});
+	window.AppView=Backbone.View.extend({
+		el:$("body"),
+		initialize:function(){
+			//构造函数，实例化一个World集合类，并且以字典方式传入AppView的对象
+			this.worldlist=new Worldlist(null,{view:this});
+		},
+		events:{//事件绑定，绑定Dom中id为check的元素
+			"click #check":"checkIn"
+		},
+		checkIn:function(){
+			var who_name=prompt("请问,你是谁?");
+			if(who_name==""||who_name==null||who_name=="undefined"){who_name="未知";}
+			var world = new World({ name: who_name });
+			this.worldlist.add(world);
+		},
+		addOneWorld:function(models){
+			$("#world-list").append("<li>你的名字叫: "+models.get("name")+"</li>");
+		}
+	});
+	//实例化AppView
+    var appView = new AppView;
+});
+</script>
+</body>
+</html>

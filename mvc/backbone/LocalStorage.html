@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LocalStorage</title>
+<script src="asset/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<a href="javascript:requestData()">点击请求数据</a>
+<a href="javascript:clearStorage()">清除（只有清除才没有）</a>
+<a href="javascript:window.location.reload()">刷新页面（数据还在、关了也还在）</a>
+<p id="result"></p>
+<script>
+if(!window.localStorage && /MSIE/.test(navigator.userAgent)){
+	if(!window.UserData) {
+		window.UserData = function(file_name) {
+			if(!file_name){file_name="user_data_default";}
+			var dom = document.createElement('input');
+			dom.type = "hidden";
+			dom.addBehavior ("#default#userData");
+			document.body.appendChild(dom);
+			dom.save(file_name);
+			this.file_name = file_name;
+			this.dom = dom;
+			return this;
+		};
+		window.UserData.prototype = {
+			setItem:function(k, v) {
+				this.dom.setAttribute(k,v);
+				this.dom.save(this.file_name);
+			},
+			getItem:function(k){
+				this.dom.load(this.file_name);
+				return this.dom.getAttribute(k);
+			},
+			removeItem:function(k){
+				this.dom.removeAttribute(k);
+				this.dom.save(this.file_name);
+			},
+			clear:function() {
+			   this.dom.load(this.file_name);
+			   var now = new Date();
+			   now = new Date(now.getTime()-1);
+			   this.dom.expires = now.toUTCString();
+			   this.dom.save(this.file_name);
+			}
+		};
+	}
+	window.localStorage = new window.UserData("local_storage");
+}
+
+$("#result").html("这数据是读取的本地数据："+localStorage.getItem("myboard"));
+function requestData() {	
+	if(localStorage.getItem("myboard")) {
+		$("#result").html("已经有了数据不请求：" + localStorage.getItem("myboard"));
+	} else {
+		var data=10000;
+		localStorage.setItem("myboard", data)
+		$("#result").html("没有本地数据请求获取：" + localStorage.getItem("myboard"));
+	}
+}
+function clearStorage(){
+	localStorage.removeItem("myboard");
+	$("#result").html(localStorage.getItem("myboard"));
+}
+
+</script>
+</body>
+</html>

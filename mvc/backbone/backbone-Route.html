@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>backbone-Route</title>
+</head>
+
+<body>
+<a href="#actions">testActions</a>
+<a href="#/posts/120">Post 120</a>
+<script src="asset/jquery-1.7.2.min.js"></script>
+<script src="asset/underscore-min.js"></script>
+<script src="asset/backbone.js"></script>
+<script>
+jQuery(function($){
+	//Backbone中的router，见名知意，router有路由的意思，显然这里是要控制url的。
+    //Backbone.Router会把你连接中的#标签当做是url路径
+    //1.先来看一个例子
+	/*
+	var AppRouter=Backbone.Router.extend({
+		routes:{
+			"*actions" : "defaultRoute"
+		},
+		defaultRoute:function(actions){
+			alert(actions);
+		}
+	});
+	var appRouter = new AppRouter;
+	Backbone.history.start();
+	*/
+	var AppRouter = Backbone.Router.extend({
+		routes: {
+			"/posts/:id" : "getPost",
+			"*actions" : "defaultRoute"
+		},
+		getPost: function(id) {
+			alert(id);
+		},
+		defaultRoute : function(actions){
+			alert(actions);
+		}
+	});
+	
+	var app_router = new AppRouter;
+	
+	Backbone.history.start();
+});
+</script>
+</body>
+</html>
