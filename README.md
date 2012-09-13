@@ -1,4 +1,4 @@
-﻿个人blog地址：<a href="http://www.xiaobai8.com" target="_blank">小白</a>
+﻿个人blog地址：[小白](http://www.xiaobai8.com)
 
 一.MVC 文件
 
