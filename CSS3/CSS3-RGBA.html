@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS3-RGBA</title>
+<style type="text/css">
+*{maring:0;padding:0;}
+ul,li{list-style:none;}
+.example-opacity,.example-rgba,.example{ clear:both; overflow:hidden; color:#000; margin-bottom:20px;}
+/**
+ *author:小白
+ *blog:http://www.xiaobai8.com
+ *
+ *title:RGBA
+ *语法:
+ *R: 红色值.正整数 | 百分数
+ *G: 绿色值.正整数 | 百分数
+ *B: 蓝色值.正整数 | 百分数
+ *A: 透明度.取值0~1之间
+ *取值：
+ *<length> : Hue(色调).0(或360)表示红色,120表示绿色,240表示蓝色,当然可取其他数值来确定其它颜色;
+ *<percentage> : Saturation(饱和度). 取值为0%到100%之间的值;
+ *<percentage> : Lightness(亮度). 取值为0%到100%之间的值;
+ *<opacity> : alpha(透明度). 取值在0到1之间;
+ *测试环境ie9+,现代浏览器最新版
+ *参考原文地址：http://www.w3cplus.com/node/45
+ */
+.opacity { width:100px; height:50px; float:left; text-align:center;}
+.opacity1 {
+	background: rgb(255,0,0);
+	opacity: 1;
+	filter:alpha(opaity=100);
+}
+.opacity2 {
+	background: rgb(255,0,0);
+	opacity: 0.8;
+	filter:alpha(opaity=80);
+}
+.opacity3 {
+	background: rgb(255,0,0);
+	opacity: 0.6;
+	filter:alpha(opaity=60);
+}
+.opacity4 {
+	background: rgb(255,0,0);
+	opacity: 0.4;
+	filter:alpha(opaity=40);
+}
+.opacity5 {
+	background: rgb(255,0,0);
+	opacity: 0.2;
+	filter:alpha(opaity=20);
+}
+.opacity6 {
+	background: rgb(255,0,0);
+	opacity: 0;
+	filter:alpha(opaity=0);
+}
+.rgba{width:100px; height:50px; float:left;}
+.rgba1{
+	background: rgba(255,0,0,1);
+}
+.rgba2{
+	background: rgba(255,0,0,0.8);
+}
+.rgba3{
+	background: rgba(255,0,0,0.6);
+}
+.rgba4{
+	background: rgba(255,0,0,0.4);
+}
+.rgba5{
+	background: rgba(255,0,0,0.2);
+}
+.rgba6{
+	background: rgba(255,0,0,0);
+}
+/**
+ *classname:example
+ *author:小白
+ */
+.example{ 
+	background:rgb(255,0,0);
+	width:200px;
+}
+.example p{
+	background:rgba(0,0,0,0.6);
+	width:200px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	color:#FFF;
+}
+</style>
+</head>
+<body>
+<div class="example-opacity">
+    <p>Opacity效果</p>
+    <ul>
+        <li class="opacity opacity1">100%</li>
+        <li class="opacity opacity2">80%</li>
+        <li class="opacity opacity3">60%</li>
+        <li class="opacity opacity4">40%</li>
+        <li class="opacity opacity5">20%</li>
+        <li class="opacity opacity6">0</li>
+    </ul>
+</div>
+<div class="example-rgba">
+    <p>CSS3的RGBA效果</p>
+    <ul>
+        <li class="rgba rgba1">1</li>
+        <li class="rgba rgba2">0.8</li>
+        <li class="rgba rgba3">0.6</li>
+        <li class="rgba rgba4">0.4</li>
+        <li class="rgba rgba5">0.2</li>
+        <li class="rgba rgba6">0</li>
+    </ul>
+</div>
+<div class="example">
+	<p>好好学习!</p>
+</div>
+</body>
+</html>
