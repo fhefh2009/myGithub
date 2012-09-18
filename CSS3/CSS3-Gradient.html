@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>制作渐变背景图片-CSS3-Gradient</title>
+<style type="text/css">
+*{margin:0;padding:0;}
+.example,.example1{ width:500px; height:40px; margin:10px auto;}
+.example1{ height:100px;}
+/*
+ *author:小白
+ *blog:http://www.xiaobai8.com
+ *
+ *title:线性渐变
+ *Mozilla 语法:-moz-linear-gradient( [<point> || <angle>,]? <stop>, <stop> [, <stop>]* )
+ *参数:其共有三个参数,
+ *第一个参数表示线性渐变的方向,top是从上到下,left是从左到右,
+ *如果定义成left top,那就是从左上角到右下角.第二个和第三个参数分别是起点颜色和终点颜色.
+ *你还可以在它们之间插入更多的参数,表示多种颜色的渐变.
+ *
+ *webkit 语法:-webkit-linear-gradient( [<point> || <angle>,]? <stop>, <stop> [, <stop>]* );
+ *Opera 语法:-o-linear-gradient([<point> || <angle>,]? <stop>, <stop> [, <stop>]);
+ *ie 语法:filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#FF0000, endColorstr=#000000);	
+ *测试环境ie9+,现代浏览器最新版
+ *参考原文地址: http://www.w3cplus.com/content/css3-gradient
+ *学习地址: http://www.iqianduan.org/t-703-1-1.html
+ */
+.css3-m{
+	background:-moz-linear-gradient(top,#F00,#000);
+}
+.css3-w{
+	background:-webkit-linear-gradient(top,#F00,#000);
+}
+.css3-o{
+	background:-o-linear-gradient(top,#F00,#000);
+}
+.css3-ie{
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#FF0000, endColorstr=#000000);	
+}
+/*
+ *title:径向渐变
+ *-moz-radial-gradient([<bg-position> || <angle>,]? [<shape> || <size>,]? <color-stop>, <color-stop>[, <color-stop>]*);
+ *-webkit-radial-gradient([<bg-position> || <angle>,]? [<shape> || <size>,]? <color-stop>, <color-stop>[, <color-stop>]*);
+ *除了您已经在线性渐变中看到的起始位置,方向,和颜色.
+ *径向梯度允许你指定渐变的形状(圆形或椭圆形)和大小
+ *(近端,最近角,最远端,最远角,包含或覆盖(closest-side, closest-corner, farthest-side, farthest-corner, contain or cover)).
+ */
+.css3-all{
+	background: -moz-radial-gradient(#FF0, #F00, #000);
+	background: -webkit-radial-gradient(#FF0, #F00, #000);
+	background: -o-radial-gradient(#FF0,#F00, #000);
+}
+/*
+ *上面只是练习知道有这个.http://www.colorzilla.com/gradient-editor/ 这个地方可以生成渐变背景.
+ */
+</style>
+</head>
+<body>
+<div class="example css3-m css3-w css3-o css3-ie"></div>
+<div class="example1 css3-all">	</div>
+</body>
+</html>
