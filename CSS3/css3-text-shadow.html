@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3-text-shadow</title>
+<style type="text/css">
+*{margin:0;padding:0;}
+/**
+ *author:小白
+ *blog:http://www.xiaobai8.com
+ *title:CSS3的文字阴影
+ *语法:
+ *text-shadow: none | <length> none | [<shadow>, ] * <shadow> 或none | <color> [, <color> ]*
+ *也就是：
+ *text-shadow:[颜色(Color)  x轴(X Offset) y轴(Y Offset) 模糊半径(Blur)],[颜色(color) x轴(X Offset) y轴(Y Offset) 模糊半径(Blur)]...
+ *或者
+ *text-shadow:[x轴(X Offset) y轴(Y Offset)  模糊半径(Blur)  颜色(Color)],[x轴(X Offset) y轴(Y Offset)  模糊半径(Blur)  颜色(Color)]...
+ *取值:
+ *<length>: 长度值,可以是负值.用来指定阴影的延伸距离.其中X Offset是水平偏移值,Y Offset是垂直偏移值
+ *<color>:指定阴影颜色,也可以是rgba透明色
+ *<shadow>:阴影的模糊值,不可以是负值,用来指定模糊效果的作用距离值.
+ *
+ *ie不支持用滤镜
+ *E {filter:shadow(Color=颜色值,Direction=数值,Strength=数值)}
+ *测试环境ie9+,现代浏览器最新版
+ *参考原文地址: http://www.w3cplus.com/blog/52.html
+ *学习地址: http://www.w3cplus.com/resources/css3-tutorial-and-case
+ */
+.example{
+	background: #666666;
+	width: 440px;
+	padding: 30px;
+	margin:0 auto;
+	font: bold 55px/100% "微软雅黑", "Lucida Grande", "Lucida Sans", Helvetica, Arial, Sans;;
+	color: #fff;
+	text-transform: uppercase;	
+}
+.example1{text-shadow: 0 0 20px red;}
+.example2{text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de;}
+.example3{text-shadow:0 1px 2px #fff; color:#000;}
+.example4{text-shadow:-1px -1px 0px #fff,1px 1px 0 #333,1px 1px 0 #444;color:#ccc;}
+.example5 {
+  color: transparent;
+  text-shadow:0 0 6px #F00, -1px -1px 0  #FFF, 1px -1px 0 #444;
+}
+.example6 {
+  color:#00F;
+  background:#06C;
+  text-shadow:1px 1px 0 #06F;
+}
+.example7 {
+  color:#FFF;
+  text-shadow:1px 1px 4px #F00,-1px -1px 4px #F00;
+}
+.example8 {
+  text-shadow:1px 1px 0 #CCC,2px 2px 0 #CCC,3px 3px 0 #CCC,4px 4px 0 #CCC,5px 5px 0 #CCC,6px 6px 0 #CCC;
+}
+.example9 {
+  text-shadow:-1px -1px 0 #CCC,-2px -2px 0 #CCC,-3px -3px 0 #CCC,-4px -4px 0 #CCC,-5px -5px 0 #CCC,-6px -6px 0 #CCC;
+}
+.example10{
+ text-shadow:4px 4px 0 #999,6px 6px 0 #FFF;
+}
+.example11 {
+  color: rgba(255,0,0,0.5);
+  text-shadow: 3px 3px 0 rgba(255,255,0,0.5);
+}
+/**
+ *个人理解类似与层级关系做出来的效果,看来还是要多动手.哇咔咔。
+ */
+</style>
+</head>
+<body>
+<div class="example example1">
+	APPLE
+</div>
+<div class="example example2">
+	APPLE
+</div>
+<div class="example example3">
+	APPLE
+</div>
+<div class="example example4">
+	APPLE
+</div>
+<div class="example example5">
+	APPLE
+</div>
+<div class="example example6">
+	APPLE 
+</div>
+<div class="example example7">
+	APPLE 
+</div>
+<div class="example example8">
+	APPLE 3D
+</div>
+<div class="example example9">
+	APPLE 3D
+</div>
+<div class="example example10">
+	APPLE
+</div>
+<div class="example example11">
+	APPLE
+</div>
+</body>
+</html>

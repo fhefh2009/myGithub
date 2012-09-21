@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3-box-shadow</title>
+<style type="text/css">
+*{margin:0;padding:0;}
+
+/**
+ *author:小白
+ *blog:http://www.xiaobai8.com
+ *title:CSS3 box-shadow
+ *语法:
+ *E {box-shadow: <length> <length> <length>?<length>?||<color>}
+ *也就是:
+ *E {box-shadow:inset x-offset y-offset blur-radius spread-radius color}
+ *换句说:
+ *对象选择器 {box-shadow:投影方式 X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色}
+ *取值：
+ *box-shadow属性至多有6个参数设置,他们分别取值:
+ *阴影类型: 此参数是一个可选值,如果不设值,其默认的投影方式是外阴影；如果取其唯一值"inset",就是将外阴影变成内阴影,也就是说设置阴影类型为"inset"时,其投影就是内阴影;
+ *X-offset: 是指阴影水平偏移量其值可以是正负值可以取正负值,如果值为正值,则阴影在对象的右边,反之其值为负值时,阴影在对象的左边;
+ *Y-offset: 是指阴影的垂直偏移量,其值也可以是正负值,如果为正值,阴影在对象的底部,反之其值为负值时,阴影在对象的顶部;
+ *阴影模糊半径: 此参数是可选,但其值只能是为正值,如果其值为0时,表示阴影不具有模糊效果,其值越大阴影的边缘就越模糊;
+ *阴影扩展半径: 此参数可选,其值可以是正负值,如果值为正,则整个阴影都延展扩大,反之值为负值是,则缩小
+ *阴影颜色: 此参数可选,如果不设定任何颜色时,浏览器会取默认色,但各浏览器默认色不一样,特别是在webkit内核下的safari和chrome浏览器将无色,也就是透明,建议不要省略此参数.
+ *
+ *测试环境ie9+,现代浏览器最新版
+ *参考原文地址:http://www.w3cplus.com/content/css3-box-shadow
+ *学习地址: http://www.w3cplus.com/resources/css3-tutorial-and-case
+ */
+.example{
+	background: #666666;
+	width: 440px;
+	padding: 30px;
+	margin:30px auto;
+	font: bold 55px/100% "微软雅黑", "Lucida Grande", "Lucida Sans", Helvetica, Arial, Sans;
+	color: #fff;
+	text-transform: uppercase;	
+}
+.example1{
+	box-shadow:-2px 0 0 #F00,0 -2px 0 #00F,2px 0 0 #FF0,0 2px 0 #0C6 ;
+}
+.example2{
+	border:10px solid #F00;
+}
+.example22{
+	box-shadow:0 0 0 10px #F00;
+}
+
+.example3{ width:140px; background:none; height:100px; padding:0;box-shadow:inset 0 0 20px #F00;}
+.example3 img {
+    position: relative;
+    z-index: -1;
+}
+.example4{ width:140px; background:none; height:100px; position:relative; }
+.example4::before{
+  content:""; 
+  position: absolute;
+  width: 140px;
+  height: 100px; 
+  box-shadow:inset 0 0 20px #F00;
+}
+.example-ie{
+  filter: 
+	  progid:DXImageTransform.Microsoft.Shadow(color=#FF0000,direction=0,strength=7)
+	  progid:DXImageTransform.Microsoft.Shadow(color=#0000FF,direction=90,strength=10)
+	  progid:DXImageTransform.Microsoft.Shadow(color=#FFFF00,direction=180,strength=10)
+	  progid:DXImageTransform.Microsoft.Shadow(color=#00CC66,direction=270,strength=7);
+}
+/*drop-shadow*/
+.example5{ 
+    position:relative; 
+	background:#ccc;
+}
+.example5::before,.example5::after{
+	content:" ";
+	position:absolute;
+	z-index: -1;
+	bottom:15px;
+	left: 10px;
+	width: 150px;
+    height: 30px;
+	box-shadow:0 15px 10px rgba(153,153,153,0.8);
+	-webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+}
+.example5::after{
+	right:10px;
+	left:auto;
+	-webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+	transform: rotate(5deg);
+}
+
+/**
+ *总结:感觉这个东西蛮好玩的。特别最后一个例子,这种高级东西.
+ *ie9这种浏览器都支持的不是很好。很多属性不怎么支持。
+ */
+</style>
+</head>
+
+<body>
+<div class="example example1">APPLE</div>
+<div class="example example-ie">APPLE</div>
+<div class="example example2">APPLE</div>
+<div class="example example22">APPLE</div>
+<div class="example example3">
+	<img src="http://www.xiaobai8.com/wp-content/themes/weisaysimple/images/random/tb2.jpg" alt="">
+</div>
+<div class="example example4">
+	<img src="http://www.xiaobai8.com/wp-content/themes/weisaysimple/images/random/tb2.jpg" alt="">
+</div>
+<div class="example example5" id="test">
+	APPLE
+</div>
+</body>
+</html>
