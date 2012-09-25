@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3-border-color</title>
+<style type="text/css">
+*{margin:0;padding:0;}
+/**
+ *author:小白
+ *blog:http://www.xiaobai8.com
+ *title:css3-border-color
+ *border-color: <color> 其中可以上一个值，也可以是多个值，具体我在这里不多说了，大家来时用到的也特别多
+ *我们可以分别给各边上色
+ *border-top-color: <color>给上边框上色
+ *border-right-color: <color>给右边框上色
+ *border-bottom-color:<color>给下边框上色
+ *border-left-color: <color>给左框上色
+ *测试环境ie9+,现代浏览器最新版
+ *参考原文地址: http://www.w3cplus.com/content/css3-border-color
+ *学习地址: http://www.w3cplus.com/resources/css3-tutorial-and-case
+ */
+.demo{
+	width: 200px;
+	height: 100px;
+	border: 5px solid transparent;
+	-moz-border-top-colors: red blue white white black;
+	-moz-border-right-colors: red blue white white black;
+	-moz-border-bottom-colors: red blue white white black;
+	-moz-border-left-colors: red blue white white black;    
+}
+/**
+ *貌似目前仅支持火狐最新版
+ *update:2012-09-25
+ */
+</style>
+</head>
+<body>
+<div class="demo"></div>
+</body>
+</html>
