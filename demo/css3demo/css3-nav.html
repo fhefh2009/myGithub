@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3-nav</title>
+<style type="text/css">
+/**
+ *author:小白
+ *blog:http://www.xiaobai8.com
+ */
+*{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.nav{
+	overflow:hidden;
+	width:980px;
+	margin:50px auto;
+	padding:0 20px;
+}
+.nav li{
+	float:left;
+	background:#ccc;
+	border-radius:10px 10px 0 0;
+	height:35px;
+	line-height:35px;
+	position:relative;
+}
+.nav li a{
+	display:inline-block;
+	padding:0 20px;
+	font-size:12px;
+	color:#fff;
+	text-decoration:none;
+	position:relative;
+}
+.nav li:after,
+.nav li:before{
+	width:15px;
+	height:15px;
+	display:inline-block;
+	content:"";
+	background:#ccc;
+	border-radius:15px;
+  	position:absolute;
+	z-index:2;
+} 
+.nav li:after{
+	left:-15px;
+	bottom:0;
+}
+.nav li:before{
+	right:-15px;
+	bottom:0;
+}
+.nav li:first-child:after,
+.nav li:last-child:before{
+	background:#fff;
+}
+.nav li:first-child:hover:after,
+.nav li:last-child:hover:before{
+	background:#fff;
+}
+.nav li a:after,
+.nav li a:before{
+	width:8px;
+	height:8px;
+	overflow:hidden;
+	display:block;
+	content:"";
+	background:#ccc;
+ 	position:absolute;
+	z-index:1;
+}
+.nav li a:after{
+	left:-8px;
+	bottom:0;
+}
+.nav li a:before{
+	right:-8px;
+	bottom:0;
+}	
+.nav li.active,
+.nav li:hover{
+	background:#F00;
+	z-index:3;
+	text-shadow:1px 1px 0 #000;
+}
+.nav li.active:after,
+.nav li.active:before,
+.nav li:hover:after,
+.nav li:hover:before{
+	background:#ccc;
+	z-index:2;
+}
+.nav li.active a:after,
+.nav li.active a:before,
+.nav li:hover a:after,
+.nav li:hover a:before{
+	background:#F00;
+	z-index:1;
+}	
+.nav li.active+li:hover:after,
+.nav li:hover+li.active:after{
+	background:#F00;
+}
+</style>
+</head>
+
+<body>
+<div class="nav">
+<ul>
+    <li><a href="#">首页</a></li>
+    <li><a href="#">关于我们</a></li>
+    <li class="active"><a href="#">关于我们</a></li>
+    <li><a href="#">联系我们</a></li>
+    <li><a href="#">新闻中心</a></li>
+    <li><a href="#">关于我们</a></li>
+    <li><a href="#">联系我们联系我们</a></li>
+</ul>
+</div>
+</body>
+</html>
