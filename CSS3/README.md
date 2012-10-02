@@ -20,4 +20,6 @@
 
 11.css3-text-overflow
 
+12.css3-word-wrap
+
 blog:[小白 http://www.xiaobai8.com](http://www.xiaobai8.com)
