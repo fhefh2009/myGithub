@@ -24,4 +24,6 @@
 
 13.css3-box-sizing 盒子模型新概念
 
+14.css3-font-face 制作特殊字体(fonts文件夹字体)
+
 blog:[小白 http://www.xiaobai8.com](http://www.xiaobai8.com)
