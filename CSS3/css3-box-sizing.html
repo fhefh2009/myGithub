@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3-box-sizing</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+/**
+ *author:小白
+ *blog:http://www.xiaobai8.com
+ *title:css3-box-sizing
+ *语法:box-sizing ： content-box || border-box || inherit
+ *测试环境ie9+,现代浏览器最新版
+ *参考原文地址:http://www.w3cplus.com/content/css3-box-sizing
+ *学习地址: http://www.w3cplus.com/resources/css3-tutorial-and-case
+ */
+
+/*Box Model*/ 
+/**
+ *1、W3C的标准Box Model:
+ *外盒尺寸计算(元素空间尺寸)
+ *Element空间高度 = content height + padding + border + margin
+ *Element 空间宽度 = content width + padding + border + margin
+ *内盒尺寸计算(元素大小)
+ *Element Height = content height + padding + border (Height为内容高度)
+ *Element Width = content width + padding + border (Width为内容宽度) 
+ */
+/**
+ *2、IE传统下Box Model(IE6以下,不含IE6版本或"QuirksMode下IE5.5+"):
+ *外盒尺寸计算(元素空间尺寸)
+ *Element空间高度 = content Height + margin (Height包含了元素内容宽度，边框宽度，内距宽度)
+ *Element空间宽度 = content Width + margin (Width包含了元素内容宽度、边框宽度、内距宽度)
+ *内盒尺寸计算(元素大小)
+ *Element Height = content Height(Height包含了元素内容宽度，边框宽度，内距宽度)
+ *Element Width = content Width(Width包含了元素内容宽度、边框宽度、内距宽度)
+ */
+
+.demo img {
+	width: 80px;
+	height: 80px;
+	padding: 20px;
+	border: 10px solid orange;
+	margin: 10px;
+}
+.demo1 img {
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-o-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.demo2 img {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.layoutDemo {
+	width: 960px;
+	background: #000;
+}
+#header {
+	width: 100%;
+	background: orange;
+}
+#left {
+	width: 220px;
+	float: left;
+	margin-right: 20px;
+	background: green;
+}
+#main-content {
+	width: 720px;
+	float: left;
+	background: gray;
+}
+#footer {
+	width: 100%;
+	background: red;
+}
+.box-sizing {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/*一个demo*/
+body {
+	font-size: 12px;
+}
+form {
+	width: 200px;
+	margin: 20px auto;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+.form-field {
+	margin-bottom: 5px;
+	background: #cdcdcd;
+	padding: 2px;
+}
+.submit, .reset, .button, .text, .select, .textarea {
+	width: 80px;
+	border-color: red;
+}
+.textarea {
+	resize: none;
+}
+.submit, .reset, .button, .text, .select, .textarea, .checkbox, .radio {
+	margin: 0;
+	padding: 0;
+	border-width: 1px;
+	height: 17px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.checkbox, .radio {
+	width: 13px;
+	height: 13px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/*这个要慢慢领悟才可以*/
+/**
+ *update:2012-10-02
+ */
+</style>
+</head>
+
+<body>
+<div class="demo demo1"> <img src="http://image.zhangxinxu.com/image/blog/201001/border.png" width="80" height="80" /> </div>
+<div class="demo demo2"> <img src="http://image.zhangxinxu.com/image/blog/201001/border.png" width="80" height="80" /> </div>
+<div class="layoutDemo">
+  <div id="header" class="innerPadding border box-sizing">Header Content</div>
+  <div id="content" class="clearfix">
+    <div id="left" class="aside innerPadding border box-sizing">Left Sidebar</div>
+    <div id="main-content" class="article innerPadding border box-sizing">Main Content</div>
+  </div>
+  <div id="footer" class="innerPadding border box-sizing"> Footer Content</div>
+</div>
+<form action="#" method="post">
+  <div class="form-field">
+    <input type="submit" value="submit" class="submit" />
+  </div>
+  <div class="form-field">
+    <input type="reset" value="reset" class="reset" />
+  </div>
+  <div class="form-field">
+    <button class="button">button</button>
+  </div>
+  <div class="form-field">
+    <input type="text" value="text" class="text" />
+  </div>
+  <div class="form-field">
+    <select name="select" id="select" class="select">
+      <option value="1">1980</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <input type="checkbox" class="checkbox" />
+    checkbox</div>
+  <div class="form-field">
+    <input type="radio" class="radio" />
+    radio</div>
+  <div class="form-field">
+    <textarea name="textarea" id="" cols="30" rows="3" class="textarea"></textarea>
+  </div>
+</form>
+</body>
+</html>

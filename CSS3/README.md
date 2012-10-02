@@ -22,4 +22,6 @@
 
 12.css3-word-wrap 控制文本断行效果
 
+13.css3-box-sizing 盒子模型新概念
+
 blog:[小白 http://www.xiaobai8.com](http://www.xiaobai8.com)
