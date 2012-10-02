@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3-border-image</title>
+<style type="text/css">
+*{margin:0;padding:0;}
+/**
+ *author:小白
+ *blog:http://www.xiaobai8.com
+ *title:css3-border-image
+ *border-image: none | <image> [ <number> | <percentage>]{1,4} [ / <border-width>{1,4} ]? [ stretch | repeat | round ]{0,2}
+ *1.引入图片: border-image-source;
+ *2.切割引入的图片: border-image-slice;
+ *3.边框的宽度: border-image-width;
+ *4.图片的排列方式: border-image-repeat;
+ *测试环境ie9+,现代浏览器最新版
+ *参考原文地址: http://www.w3cplus.com/content/css3-border-image
+ *学习地址: http://www.w3cplus.com/resources/css3-tutorial-and-case
+ */
+.demo{
+	width: 300px;
+    height: 100px;
+	margin:20px auto;
+	/*
+	border: 27px solid orange;
+	-moz-border-image: url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27;
+    -webkit-border-image: url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27;
+    -o-border-image: url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27;
+	border-image:url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27;
+	*/
+}
+/*水平round效果 & 垂直方向的stretch效果*/
+.border-image-round {
+	border: 27px solid orange;
+	-moz-border-image: url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 round stretch;
+	-webkit-border-image: url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 round stretch;
+	-o-border-image: url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 round stretch;
+	border-image:url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 round stretch;
+}
+/*水平repeat效果*/
+.border-image-repeat {
+	border: 27px solid orange;
+	-moz-border-image: url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 repeat stretch;
+	-webkit-border-image: url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 repeat stretch;
+	-o-border-image: url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 repeat stretch;
+	border-image:url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 repeat stretch;
+}
+/*垂直方向的repeat效果*/
+.border-image-repeat-val {
+	border: 27px solid orange;
+	-moz-border-image: url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 stretch repeat;
+	-webkit-border-image: url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 stretch repeat;
+	-o-border-image: url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 stretch repeat;
+	border-image:url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 stretch repeat;
+}
+/*水平拉伸效果 & 垂直方向的round效果*/
+.border-image-stretch{
+	border: 27px solid orange;
+	-moz-border-image: url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 stretch round;
+	-webkit-border-image: url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 stretch round;
+	-o-border-image: url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 stretch round;
+	border-image:url(http://image.zhangxinxu.com/image/blog/201001/border.png) 27 stretch round;
+}
+
+/*test*/
+.buttonElement {
+	display:block;
+	width: 200px;
+	padding: 12px;
+	text-align: center;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 24px;
+	text-decoration: none;
+	color: white;
+	text-shadow: black 1px 1px 2px;
+	border-width: 0 16px 0 16px;
+	border-image: url(http://alignedleft.com/projects/2011/css3buttonsprites/button_sprite.png) 3 18 56 18 repeat stretch;
+	-webkit-border-image: url(http://alignedleft.com/projects/2011/css3buttonsprites/button_sprite.png) 3 18 56 18 repeat stretch;	
+}
+.clickTrigger:active {
+	color: black;
+	text-shadow: none;
+	border-image: url(http://alignedleft.com/projects/2011/css3buttonsprites/button_sprite.png) 52 18 6 18;
+	-webkit-border-image: url(http://alignedleft.com/projects/2011/css3buttonsprites/button_sprite.png) 52 18 6 18;	
+}
+
+/**
+ *终于懂了一点咯
+ *update:2012-10-02
+ */
+</style>
+</head>
+<body>
+<div class="demo border-image-round"></div>
+<div class="demo border-image-repeat"></div>
+<div class="demo border-image-repeat-val"></div>
+<div class="demo border-image-stretch"></div>
+
+<a class="buttonElement clickTrigger" href="javascript:void(0);">Click me!</a>
+</body>
+</html>

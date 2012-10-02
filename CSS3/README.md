@@ -16,4 +16,6 @@
 
 9.css3-border-color
 
+10.css3-border-image
+
 blog:[小白 http://www.xiaobai8.com](http://www.xiaobai8.com)
