@@ -18,4 +18,6 @@
 
 10.css3-border-image
 
+11.css3-text-overflow
+
 blog:[小白 http://www.xiaobai8.com](http://www.xiaobai8.com)
