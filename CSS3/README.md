@@ -26,4 +26,12 @@
 
 14.css3-font-face 制作特殊字体(fonts文件夹字体)
 
+15.css3-background-size 背景尺寸
+
+16.css3-background-clip 背景裁剪
+
+17.css3-background-origin 背景原点
+
+18.css3-multiple-backgrounds 制作多背景
+
 blog:[小白 http://www.xiaobai8.com](http://www.xiaobai8.com)
