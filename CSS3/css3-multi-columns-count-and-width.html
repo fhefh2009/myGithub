@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3-multi-columns-count-and-width</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+/**
+ *author:小白
+ *blog:http://www.xiaobai8.com
+ *title:css3-multi-columns-count-and-width
+ *
+ *测试环境ie9+,现代浏览器最新版
+ *参考原文地址: http://www.w3cplus.com/content/css3-multi-columns-count-and-width
+ *学习地址: http://www.w3cplus.com/resources/css3-tutorial-and-case
+ */
+.demo{
+	width: 400px;
+	margin:10px auto;	
+	padding:10px;
+	border: 10px solid #ccc;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+/**
+ *column-width = (width-(n-1)*font-size)/n
+ *其中n大于或等于2;并且其他值为默认值
+ *当你把column-width值大于193时,只会显示一列,上面公式计算出来的值,我测试过可以使用正常(其它相关值为默认值).
+ */
+.columnCountAuto {
+	-moz-column-count: auto;
+	-webkit-column-count: auto;
+	column-count: auto;
+	-moz-column-width: 193px;
+	-webkit-column-width: 193px;
+	column-width: 193px;
+	/*(400-(2-1)x14)/2=193*/
+}
+
+.columnWidthBig {
+	-moz-column-width: 195px;
+	-webkit-column-width: 195px;
+	column-width: 195px;
+	-moz-column-gap: 0;
+	-webkit-column-gap: 0;
+	column-gap: 0;
+	-moz-column-rule: 0 none; 
+	-webkit-column-rule: 0 none;
+	column-rule: 0 none;					
+	/*无其他样式的情况下,本来超过了上面的193应该是显示一列的,但是这里加了gap:0就变掉咯*/
+}
+
+.columnWidthBig2 {
+	-moz-column-width: 450px;
+	-webkit-column-width: 450px;
+	column-width: 450px;
+	-moz-column-gap: 0;
+	-webkit-column-gap: 0;
+	column-gap: 0;
+	-moz-column-rule: 0 none; 
+	-webkit-column-rule: 0 none;
+	column-rule: 0 none;
+	/*虽然设置的列宽大于元素容器的宽度,但并不会让元素内容按列的宽度进行布局而撑破元素容器.他只会把列宽降到与元素容器宽度相等.*/
+}
+/**
+ *可以查看原文
+ *update:2012-10-03
+ */
+</style>
+</head>
+<body>
+<div class="demo columnCountAuto">Lorem ipsum dolor sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit </div>
+<div class="demo columnWidthBig">Lorem ipsum dolor sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit </div>
+<div class="demo columnWidthBig2">Lorem ipsum dolor sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit </div>
+</body>
+</body>
+</html>

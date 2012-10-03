@@ -34,4 +34,12 @@
 
 18.css3-multiple-backgrounds 制作多背景
 
+19.css3-multi-columns-span 多列属性之跨列
+
+20.css3-multi-columns-count-and-width 多列属性之列数与列宽
+
+21.css3-multi-columns-column-gap-and-column-rule 多列属性之列间距
+
+22.css3-media-queries css媒体
+
 blog:[小白 http://www.xiaobai8.com](http://www.xiaobai8.com)

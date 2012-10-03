@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3-media-queries</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+/**
+ *author:小白
+ *blog:http://www.xiaobai8.com
+ *title:css3-media-queries
+ *
+ *测试环境ie9+,现代浏览器最新版
+ *参考原文地址: http://www.w3cplus.com/content/css3-media-queries
+ *学习地址: http://www.w3cplus.com/resources/css3-tutorial-and-case
+ */
+.demo{ 
+	width:900px; 
+	height:600px; 
+	margin:10px auto;
+	overflow-y:scroll;
+	border:1px solid #CCC;
+}
+/**
+ *可以查看原文
+ *update:2012-10-03
+ */
+</style>
+</head>
+<body>
+<div class="demo">
+    <pre style=" font-family:Trebuchet MS, Arial, Helvetica, sans-serif; color:#030; line-height:24px;">
+    1、link的方式引入:
+        &lt;link rel="stylesheet" type="text/css" href="css/print.css" media="print" /&gt
+    2、XML的方式引入:
+        &lt;?xml-stylesheet rel="stylesheet" media="screen" href="css/screen.css"?&gt
+    3、@import方式引入:
+        @import引入有两种方式:
+        A:样式文件中通过@import调用别一个样式文件;
+        B:在&lt;head&gt;&lt;/head&gt;中的&lt;style&gt;...&lt;/style&gt;中引入,单这种使用方法在ie6-7都不被支持;
+        
+        A例子：
+        样式文件中调用另一个样式文件：
+            @import url("css/reset.css") screen;
+            @import url("css/print.css") print;
+        B例子：
+        在&lt;head&gt;&lt;/head&gt;中的&lt;style&gt;...&lt;/style&gt;中调用：
+        &lt;head&gt;
+            &lt;style type="text/css"&gt;
+                @import url("css/style.css") all;
+            &lt;/style&gt;
+        &lt;/head&gt;
+        
+    4、@media引入
+        这种引入方式和@imporr是一样的，也有两种方式：
+        
+        样式文件中使用：
+        @media screen{
+            选择器{
+                属性:属性值;
+            }
+        }
+        在&lt;head&gt;&lt;/head&gt;中的&lt;style&gt;...&lt;/style&gt;中调用：
+        &lt;head&gt;
+            &lt;style type="text/css"&gt;
+            @media screen{
+                选择器{
+                    属性:属性值;
+                }
+            }
+            &lt;/style&gt;
+        &lt;/head&gt;
+    </pre>
+</div>
+</body>
+</body>
+</html>

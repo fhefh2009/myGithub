@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3-multi-columns-span</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+/**
+ *author:小白
+ *blog:http://www.xiaobai8.com
+ *title:css3-multi-columns-span
+ *语法: column-span: none || all;
+ *测试环境ie9+,现代浏览器最新版
+ *参考原文地址: http://www.w3cplus.com/content/css3-multi-columns-span
+ *学习地址: http://www.w3cplus.com/resources/css3-tutorial-and-case
+ */
+.demo{
+	width:500px;
+	height:auto;
+    border: 1px solid rgba(255,0,0,0.8);
+	margin:10px auto;
+}
+.columnBreak {
+	-moz-column-count: 3;
+	-webkit-column-count: 3;
+	column-count: 3;
+	-moz-column-gap: 30px;
+	-webkit-column-gap:30px;
+	column-gap: 30px;
+}
+.columnBreak h2 {
+	background: orange;
+	border-bottom: 3px double green;
+	margin: 5px 0;
+	-webkit-column-span: all;
+	column-span: all;
+}
+/*目前貌似只支持webkit浏览器*/
+/**
+ *update:2012-10-03
+ */
+</style>
+</head>
+<body>
+<div class="demo columnBreak"> 
+   <p>Lorem ipsum aliqua. Ut enim ad minim veniamaliqua. Ut enim ad minim veniamaliqua. Ut enim ad minim veniamaliqua. Ut enim ad minim veniamaliqua. Ut enim ad minim veniamaliqua. Ut enim ad minim veniam aliqua. Ut enim ad minim veniam, quis nostrud</p> 
+   <h2>test header</h2>
+   <p>exercitationaliqua. Ut enim ad minim veniamaliqua. Ut enim ad minim veniamaliqua. Ut enim ad minim veniamaliqua. Ut enim ad minim veniamaliqua. Ut enim ad minim veniamaliqua. Ut enim ad minim veniamaliqua. Ut enim ad minim veniamaliqua. Ut enim ad minim veniam</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3-multi-columns-column-gap-and-column-rule</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+/**
+ *author:小白
+ *blog:http://www.xiaobai8.com
+ *title:css3-multi-columns-column-gap-and-column-rule
+ *
+ *测试环境ie9+,现代浏览器最新版
+ *参考原文地址: http://www.w3cplus.com/content/css3-multi-columns-column-gap-and-column-rule
+ *学习地址: http://www.w3cplus.com/resources/css3-tutorial-and-case
+ */
+.demo{
+	width: 400px;
+	margin:10px auto;	
+	padding:10px;
+	border: 10px solid #ccc;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+
+.columnGap {
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+	-webkit-column-gap: 20px;
+	-moz-column-gap: 20px;
+	column-gap: 20px;
+}
+.columnGapWidth{
+	-webkit-column-width:193px;
+	-moz-column-width:193px;
+	column-width:193px;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+	-webkit-column-gap: 20px;
+	-moz-column-gap: 20px;
+	column-gap: 20px;
+}
+/**
+ *原文的意思：
+ *column-gap可以用来改变相邻列之间距离,
+ *但在多列元素同时设置了column-width时,
+ *column-gap与column-width之和大于多列元素总宽度时,
+ *会导至列被撑破,并以第一列显示,此时的列宽自动调节到元素的总宽度.
+ */
+.columnRule {
+	-moz-column-width: 190px;
+	-webkit-column-width: 190px;
+	column-width: 190px;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+	-webkit-column-gap: 20px;
+	-moz-column-gap: 20px;
+	column-gap: 20px;
+	-moz-column-rule: 15px solid red;
+	-webkit-column-rule: 15px solid red;
+	column-rule: 15px solid red;
+}
+.columnRule1 {
+	-moz-column-width: 180px;
+	-webkit-column-width: 180px;
+	column-width: 180px;
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	column-count: 2;
+	-moz-column-gap: 30px;
+	-webkit-column-gap: 30px;
+	column-gap: 30px;
+	background:#060;
+	color:white;
+	-moz-column-rule: 150px solid red;
+	-webkit-column-rule: 30px solid red;
+	column-rule: 150px solid red;
+} 
+/*发现一个问题column-rule在webkit浏览器里面如果设置的宽度超过了gap的宽度就没有显示了,不知道是不是这个属性本来就是这个样子的？*/
+/**	
+ *可以查看原文
+ *update:2012-10-03
+ */
+</style>
+</head>
+<body>
+<div class="demo columnGap">Lorem ipsum dolor sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit </div>
+<div class="demo columnGapWidth">Lorem ipsum dolor sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit </div>
+<div class="demo columnRule">Lorem ipsum dolor sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit </div>
+<div class="demo columnRule1">Lorem ipsum dolor sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit sit Lorem ipsum dolor sit </div>
+
+</body>
+</body>
+</html>
