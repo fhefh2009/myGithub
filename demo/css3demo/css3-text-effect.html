@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3-text-effect</title>
+<style type="text/css">
+*{margin:0;padding:0;}
+/**
+ *author:小白
+ *blog:http://www.xiaobai8.com
+ *title:text-effect
+ *测试环境ie9+,现代浏览器最新版
+ *参考原文地址: http://www.w3cplus.com/css3/text-effect
+ *学习地址: http://www.w3cplus.com/resources/css3-tutorial-and-case
+ */
+.demo{
+	width:700px;
+	margin:0 auto; 
+	
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:30px;
+}
+.test{
+	height:80px; 
+	line-height:80px;
+	text-align:center;
+	margin:5px auto;
+	background:#d5d2c1;
+}
+/*Inset Text(内阴影效果)*/
+.insetText h2{
+	color: #f00;
+	text-shadow: 1px 1px 0px #212121;
+}
+/*3D Text*/
+.Test3d h2{
+	color: #fff;
+	text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1),0 1px 3px rgba(0,0,0,0.3),0 3px 5px rgba(0,0,0,0.2),0 5px 10px rgba(0,0,0,0.25);
+}
+/*Neon Lights Effect(霓虹灯效果)*/
+.neonText h2{
+	color: #fff;
+	text-shadow:0 0 5px #CCCCCC, 0 0 10px #CCCCCC, 0 0 15px #CCCCCC, 0 0 20px #095816, 0 0 25px #095816, 0 0 30px #095816, 0 0 50px #095816, 0 0 80px #095816, 0 0 100px #095816, 0 0 150px #095816
+}
+/*Letterpress Effect (凸版效果)*/
+.letterpressText{
+	background:#454545;
+}
+.letterpressText h2 {
+	color: #222;
+	text-shadow: 0px 2px 3px #555;
+}
+/*Text Embossing(浮雕效果)*/
+.embossingText{
+	background:#6a85af;
+}
+.embossingText h2{
+	color: #FFFFFF;
+	text-shadow: 0px -1px 0px #374683;
+}
+.emboosingTwo{
+	background:#c9c9c9;
+}
+.embossingTwo h2 {
+	color: #737373;
+	text-shadow: 0px 1px 0px #e5e5ee;
+}
+/*Stroke Effect(描边效果)*/
+.stroke h2 {
+	color: #c00; 
+	-webkit-text-stroke: 1px #000; 
+	/*这个是webkit浏览器的一种描边*/
+}
+.strokeTwo h2{
+	color: #c00;
+	text-shadow: -1px -1px 0 #000000,1px 1px 0 #000000; 
+}
+/*在webkit还有一个text-fill-color制作一种抽空文字的效果*/
+.strokeTransparent h2 {
+	-webkit-text-stroke: 1px #000;
+	-webkit-text-fill-color: transparent;
+}
+
+/*Anaglyphic effect(补色3D效果)*/
+.anaglyphic h2 {
+	color: rgba(255, 100, 140,0.5);
+	text-shadow: 3px 3px 0 rgba(80,255,0,0.8);
+}
+/*Rotate Text(旋转文本)*/
+.rotate h2 {
+	-webkit-transform: rotate(-90deg); 
+	-moz-transform: rotate(-90deg);	
+	-o-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+/*Emboss Effect(浮雕效果)*/
+.emboss h2 {
+	color: #ccc;
+	text-shadow: -1px -1px #fff, 1px 1px #333;
+}
+/*Blury Effect(模糊效果)*/
+.blury h2 {
+	color: transparent;
+	text-shadow: 0 0 4px #F00;
+}
+/*Background-clip:text(图片填充文字) webkit浏览器*/
+.backgroundClip h2 {
+	background:url(http://www.xiaobai8.com/demo/2012/20120928/images/ad20120622.jpg) no-repeat center top;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+/*True Inset Effect*/
+.trueInset h2 {
+	background: #666;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	text-shadow: 0 3px 3px rgba(255,255,255,0.5);
+}
+
+/**
+ *Gradient Effect 
+ *文字渐变效果是使用webkit-mask-image来制作,但这种效果只有Chrome和Safari支持.
+ */
+h1 {
+	position: relative;
+	text-shadow: 1px 0 4px #006;
+	font-family: Airal;
+	background:#d5d2c1;
+	text-align:center;
+}
+h1 a {
+	position: absolute;
+	top: 0; 
+	z-index: 2;
+	color: #f36902;
+	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+	text-descoration: none;
+}
+h1:after {
+	content: "Gradient Effect";
+	color: #000;
+	text-shadow: 1px 1px 1px #600;
+}
+/**
+ *剩余的可以查看原文
+ *update:2012-10-03
+ */
+</style>
+</head>
+
+<body>
+<div class="demo">
+	<div class="test insetText">
+    	<h2>insetText 内阴影效果</h2>
+    </div>
+    <div class="test Test3d">
+    	<h2>3D Text</h2>
+    </div>
+    <div class="test neonText">
+    	<h2>neon Text</h2>
+    </div>
+    <div class="test letterpressText">
+    	<h2>letterpress Text</h2>
+    </div>
+    <div class="test embossingText">
+    	<h2>embossing Text</h2>
+    </div>
+    <div class="test embossingTwo">
+    	<h2>embossing Two</h2>
+    </div>
+    <div class="test stroke">
+    	<h2>stroke</h2>
+    </div>
+    <div class="test strokeTwo">
+    	<h2>stroke Two</h2>
+    </div>
+    <div class="test strokeTransparent">
+    	<h2>strokeTransparent</h2>
+    </div>
+    <div class="test anaglyphic">
+    	<h2>anaglyphic</h2>
+    </div>
+    <div class="test rotate">
+    	<h2>rotate</h2>
+    </div>
+    <div class="test emboss">
+    	<h2>emboss</h2>
+    </div>
+    <div class="test blury">
+    	<h2>blury</h2>
+    </div>
+    <div class="test backgroundClip">
+    	<h2>backgroundClip</h2>
+    </div>
+    <div class="test trueInset">
+    	<h2>backgroundClip</h2>
+    </div>
+    <h1><a href="#">Gradient Effect</a></h1>
+</div>
+</body>
+</html>
