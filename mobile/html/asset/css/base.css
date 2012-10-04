@@ -1,0 +1,59 @@
+@charset "utf-8";
+/**
+ *lastTime : 2012-10-03
+ *tags : reset
+ */
+/*reset*/
+body, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ul, ol, li, th, td, img, input {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height:1.5;
+}
+img {
+	border: 0 none;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+}
+p, ul, li {
+	list-style: none;
+}
+a, a:link {
+	text-decoration: none;
+	outline: none;
+}
+a:hover {
+	text-decoration: none;
+	color: #de0003;
+}
+header, nav, section, footer {
+	display: block;
+}
+.clearfix:after {
+	content: " ";
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+.clearfix {
+	zoom: 1;
+}
+.clearleft {
+	clear: both;
+	height: 1px;
+	line-height: 1px;
+	overflow: hidden;
+	font-size:0;
+}
+/*other*/
+html{-webkit-text-size-adjust:100%;}
+body{background:#202020;}
+.module{ clear:both;}
+input{-webkit-appearance:none;}
