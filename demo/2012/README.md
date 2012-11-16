@@ -5,3 +5,5 @@
 20121016 地址：http://www.xiaobai8.com/Blog/629.html
 
 20121017 地址：http://www.xiaobai8.com/Blog/642.html
+
+20121116 地址：http://www.xiaobai8.com/Blog/652.html
